@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Delhi to Nepal — 6 Day Itinerary</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#241c14;
+    --paper:#f6efe3;
+    --paper2:#efe4d0;
+    --saffron:#d98e2a;
+    --crimson:#a83a32;
+    --indigo:#2c4159;
+    --pine:#3c5f44;
+    --line:rgba(36,28,20,0.16);
+    --muted:#6b6052;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'Inter',sans-serif;
+    line-height:1.6;
+  }
+  h1,h2,h3,.display{
+    font-family:'Fraunces',serif;
+    font-weight:600;
+    letter-spacing:-0.01em;
+  }
+  .flags{
+    height:10px;
+    width:100%;
+    background:repeating-linear-gradient(
+      90deg,
+      var(--indigo) 0 20%,
+      var(--paper) 20% 21%,
+      var(--crimson) 21% 41%,
+      var(--paper) 41% 42%,
+      var(--pine) 42% 62%,
+      var(--paper) 62% 63%,
+      var(--saffron) 63% 83%,
+      var(--paper) 83% 84%,
+      var(--ink) 84% 100%
+    );
+  }
+  header{
+    max-width:900px;
+    margin:0 auto;
+    padding:64px 24px 40px;
+  }
+  .eyebrow{
+    font-size:13px;
+    letter-spacing:0.12em;
+    text-transform:uppercase;
+    color:var(--crimson);
+    font-weight:600;
+    margin-bottom:18px;
+  }
+  h1{
+    font-size:clamp(36px,6vw,58px);
+    line-height:1.05;
+    max-width:760px;
+  }
+  .sub{
+    margin-top:18px;
+    font-size:17px;
+    color:var(--muted);
+    max-width:560px;
+  }
+  .meta-row{
+    display:flex;
+    gap:28px;
+    margin-top:32px;
+    flex-wrap:wrap;
+  }
+  .meta-item{
+    border-left:2px solid var(--saffron);
+    padding-left:12px;
+  }
+  .meta-item .label{
+    font-size:12px;
+    text-transform:uppercase;
+    letter-spacing:0.08em;
+    color:var(--muted);
+  }
+  .meta-item .val{
+    font-family:'Fraunces',serif;
+    font-size:18px;
+    font-weight:500;
+  }
+  main{
+    max-width:900px;
+    margin:0 auto;
+    padding:20px 24px 100px;
+  }
+  .day{
+    display:grid;
+    grid-template-columns:140px 1fr;
+    gap:32px;
+    padding:44px 0;
+    border-top:1px solid var(--line);
+  }
+  .day:first-child{border-top:1px solid var(--line);}
+  .day-num{
+    font-family:'Fraunces',serif;
+    font-size:64px;
+    font-weight:400;
+    color:var(--paper2);
+    -webkit-text-stroke:1.5px var(--ink);
+    line-height:1;
+  }
+  .day-head{
+    display:flex;
+    align-items:baseline;
+    justify-content:space-between;
+    gap:16px;
+    flex-wrap:wrap;
+    margin-bottom:6px;
+  }
+  .day-title{
+    font-size:24px;
+  }
+  .tag{
+    font-size:11px;
+    text-transform:uppercase;
+    letter-spacing:0.08em;
+    font-weight:600;
+    padding:5px 11px;
+    border-radius:100px;
+    white-space:nowrap;
+  }
+  .tag-arrival{background:#e8e2d4;color:var(--muted);}
+  .tag-culture{background:#f1ddd9;color:var(--crimson);}
+  .tag-nature{background:#dde6df;color:var(--pine);}
+  .tag-adventure{background:#f5e4c4;color:#8a5a14;}
+  .stops{
+    margin-top:18px;
+    display:flex;
+    flex-direction:column;
+    gap:14px;
+  }
+  .stop{
+    display:flex;
+    gap:14px;
+    padding-bottom:14px;
+    border-bottom:1px dashed var(--line);
+  }
+  .stop:last-child{border-bottom:none;padding-bottom:0;}
+  .stop-marker{
+    width:6px;
+    height:6px;
+    border-radius:50%;
+    background:var(--saffron);
+    margin-top:9px;
+    flex-shrink:0;
+  }
+  .stop-name{font-weight:500;font-size:15px;}
+  .stop-note{font-size:14px;color:var(--muted);margin-top:2px;}
+  .practical{
+    background:var(--paper2);
+    border-radius:4px;
+    padding:36px;
+    margin-top:60px;
+  }
+  .practical h2{font-size:22px;margin-bottom:18px;}
+  .practical-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:24px;
+  }
+  .practical-item .label{
+    font-size:12px;
+    text-transform:uppercase;
+    letter-spacing:0.06em;
+    color:var(--muted);
+    margin-bottom:6px;
+  }
+  .practical-item .val{font-size:15px;}
+  footer{
+    text-align:center;
+    padding:40px 24px 60px;
+    font-size:13px;
+    color:var(--muted);
+  }
+  @media(max-width:640px){
+    .day{grid-template-columns:1fr;gap:8px;}
+    .day-num{font-size:40px;}
+  }
+</style>
+</head>
+<body>
+
+<div class="flags"></div>
+
+<header>
+  <div class="eyebrow">Delhi → Kathmandu → Pokhara → Delhi</div>
+  <h1>Six days through the roof of the world</h1>
+  <p class="sub">A culture, nature, and adventure itinerary for four — temples at dawn, peaks at sunrise, and a paraglide over Phewa Lake in between.</p>
+  <div class="meta-row">
+    <div class="meta-item"><div class="label">Duration</div><div class="val">6 days</div></div>
+    <div class="meta-item"><div class="label">Group</div><div class="val">4 travellers</div></div>
+    <div class="meta-item"><div class="label">Style</div><div class="val">Mid-range comfort</div></div>
+    <div class="meta-item"><div class="label">Visa</div><div class="val">Not required — Indian nationals</div></div>
+  </div>
+</header>
+
+<main>
+
+  <div class="day">
+    <div class="day-num">01</div>
+    <div>
+      <div class="day-head">
+        <div class="day-title">Delhi to Kathmandu</div>
+        <div class="tag tag-arrival">Arrival</div>
+      </div>
+      <div class="stops">
+        <div class="stop"><div class="stop-marker"></div><div><div class="stop-name">Flight to Kathmandu</div><div class="stop-note">About 1.5 hours, several daily departures from Delhi</div></div></div>
+        <div class="stop"><div class="stop-marker"></div><div><div class="stop-name">Check into a Thamel hotel</div><div class="stop-note">Mid-range base for the next two nights</div></div></div>
+        <div class="stop"><div class="stop-marker"></div><div><div class="stop-name">Evening in Thamel</div><div class="stop-note">Markets, dinner with live Nepali folk music</div></div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="day">
+    <div class="day-num">02</div>
+    <div>
+      <div class="day-head">
+        <div class="day-title">Kathmandu valley heritage</div>
+        <div class="tag tag-culture">Culture</div>
+      </div>
+      <div class="stops">
+        <div class="stop"><div class="stop-marker"></div><div><div class="stop-name">Kathmandu Durbar Square</div><div class="stop-note">The old royal palace complex</div></div></div>
+        <div class="stop"><div class="stop-marker"></div><div><div class="stop-name">Swayambhunath</div><div class="stop-note">The Monkey Temple, with views over the whole valley</div></div></div>
+        <div class="stop"><div class="stop-marker"></div><div><div class="stop-name">Pashupatinath Temple</div><div class="stop-note">Nepal's most sacred Hindu site, on the Bagmati river</div></div></div>
+        <div class="stop"><div class="stop-marker"></div><div><div class="stop-name">Boudhanath Stupa</div><div class="stop-note">A candlelit evening circuit around the world's largest stupa</div></div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="day">
+    <div class="day-num">03</div>
+    <div>
+      <div class="day-head">
+        <div class="day-title">Nagarkot sunrise, on to Pokhara</div>
+        <div class="tag tag-nature">Nature</div>
+      </div>
+      <div class="stops">
+        <div class="stop"><div class="stop-marker"></div><div><div class="stop-name">Early drive to Nagarkot</div><div class="stop-note">About 1.5 hrs — Himalayan range views, Everest on clear days</div></div></div>
+        <div class="stop"><div class="stop-marker"></div><div><div class="stop-name">Flight to Pokhara</div><div class="stop-note">25 minutes — saves a full day versus the 6-7 hr drive</div></div></div>
+        <div class="stop"><div class="stop-marker"></div><div><div class="stop-name">Phewa Lake, Lakeside</div><div class="stop-note">Evening stroll along the water</div></div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="day">
+    <div class="day-num">04</div>
+    <div>
+      <div class="day-head">
+        <div class="day-title">Pokhara nature and adventure</div>
+        <div class="tag tag-adventure">Adventure</div>
+      </div>
+      <div class="stops">
+        <div class="stop"><div class="stop-marker"></div><div><div class="stop-name">Paragliding over Phewa Lake</div><div class="stop-note">Annapurna range as a backdrop — Pokhara's signature activity</div></div></div>
+        <div class="stop"><div class="stop-marker"></div><div><div class="stop-name">World Peace Pagoda</div><div class="stop-note">By boat across the lake</div></div></div>
+        <div class="stop"><div class="stop-marker"></div><div><div class="stop-name">Davis Falls and Gupteshwor Cave</div><div class="stop-note">Afternoon stop, close together</div></div></div>
+        <div class="stop"><div class="stop-marker"></div><div><div class="stop-name">Lakeside evening</div><div class="stop-note">Cafes and bars along the water</div></div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="day">
+    <div class="day-num">05</div>
+    <div>
+      <div class="day-head">
+        <div class="day-title">Sarangkot sunrise, back to Kathmandu</div>
+        <div class="tag tag-nature">Nature</div>
+      </div>
+      <div class="stops">
+        <div class="stop"><div class="stop-marker"></div><div><div class="stop-name">Pre-dawn drive to Sarangkot</div><div class="stop-note">Sunrise over Annapurna and Machapuchare — one of Nepal's iconic views</div></div></div>
+        <div class="stop"><div class="stop-marker"></div><div><div class="stop-name">Fly back to Kathmandu</div><div class="stop-note">Midday flight</div></div></div>
+        <div class="stop"><div class="stop-marker"></div><div><div class="stop-name">Free afternoon</div><div class="stop-note">Thamel shopping, or an optional Trishuli River rafting trip</div></div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="day">
+    <div class="day-num">06</div>
+    <div>
+      <div class="day-head">
+        <div class="day-title">Bhaktapur and departure</div>
+        <div class="tag tag-culture">Culture</div>
+      </div>
+      <div class="stops">
+        <div class="stop"><div class="stop-marker"></div><div><div class="stop-name">Bhaktapur Durbar Square</div><div class="stop-note">About 45 min from Kathmandu — the best-preserved medieval Newari city</div></div></div>
+        <div class="stop"><div class="stop-marker"></div><div><div class="stop-name">Pottery Square and juju dhau</div><div class="stop-note">Local crafts and the famous "king of yogurt"</div></div></div>
+        <div class="stop"><div class="stop-marker"></div><div><div class="stop-name">Fly back to Delhi</div><div class="stop-note">Evening departure</div></div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="practical">
+    <h2>Practical notes</h2>
+    <div class="practical-grid">
+      <div class="practical-item"><div class="label">Entry</div><div class="val">No visa needed for Indian nationals — a valid photo ID is enough</div></div>
+      <div class="practical-item"><div class="label">Internal travel</div><div class="val">Domestic flights (Kathmandu–Pokhara) recommended over the long drive</div></div>
+      <div class="practical-item"><div class="label">Currency</div><div class="val">Nepali Rupee — Indian Rupees up to ₹100 notes are widely accepted</div></div>
+      <div class="practical-item"><div class="label">Best season</div><div class="val">October–November and March–April for clear mountain views</div></div>
+    </div>
+  </div>
+
+</main>
+
+<footer>Built for a group of four — adjust freely.</footer>
+
+</body>
+</html>
